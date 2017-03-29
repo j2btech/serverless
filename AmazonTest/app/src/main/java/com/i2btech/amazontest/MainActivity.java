@@ -26,6 +26,7 @@ import com.amazonaws.regions.Regions;
 import com.i2btech.amazontest.common.ApplicationConstants;
 import com.i2btech.amazontest.common.AuthenticationConstants;
 import com.i2btech.amazontest.helpers.ActivityDataFlowHelper;
+import com.i2btech.amazontest.utils.ValidationUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -159,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onFailure(Exception exception) {
-            Toast.makeText(MainActivity.this, "Inicio de sesión fallido...", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, ValidationUtils.formatException(exception), Toast.LENGTH_LONG).show();
         }
     };
 }
